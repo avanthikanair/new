@@ -1,0 +1,17 @@
+$sql="select * from sdatas";
+$ret=mysql_query($sql,$conn);
+if(!$ret)
+{
+ die('could not get data:'.mysql_error());
+}
+
+echo "<table border=\"1\"><tr><td>Sid</td><td></td>Fname<td>Lname</td>
+<td>Gender</td><td>Course</td></tr>";
+while($row=mysql_fetch_array($ret,MYSQL_ASSOC))
+{
+ echo "<tr><td>{$row['Sid']}</td><td>{$row['Fname']}</td><td>{$row['Lname']}</td>
+<td>{$row['Gender']}</td><td>{$row['Course']}</td><td>{$row['']}</td></tr>";
+}
+echo "</table>";
+echo "fetched data successfully";
+?>
